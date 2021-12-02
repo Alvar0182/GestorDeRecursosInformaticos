@@ -1,11 +1,3 @@
-/*
- * administrador.cc
- *
- *  Created on: 24 nov. 2021
- *      Author: asimancas
- */
-
-
 #include "administrador.h"
 #include "usuario.h"
 #include "reserva.h"
@@ -36,12 +28,12 @@ Administrador::void verInfor(){
 		}
 	}
 
-	for(int i=0;maquinas_.size()>i;i++){
-		if(idMaquina=maquinas_[i].getId_maq()){
-			cout<<"El id de la maquina es: "<<maquinas_[i].getIdmaq()<<endl;
-			cout<<"El estado de la maquina es: "<<maquinas_[i].getEstado()<<endl;
-			cout<<"Nucleos totales de esta maquina: "<<maquinas_[i].getNuc_tot()<<endl;
-			cout<<"Nucleos disponibles de esta maquina: "<<maquinas_[i].getNuc_disp()<<endl;
+	for(int i=0;reservas_.size()>i;i++){
+		if(idMaquina=reservas_[i].getId_maq()){
+			cout<<"El id de la maquina es: "<<reservas_[i].getIdmaq()<<endl;
+			cout<<"El estado de la maquina es: "<<reservas_[i].getEstado()<<endl;
+			cout<<"Nucleos totales de esta maquina: "<<reservas_[i].getNuc_tot()<<endl;
+			cout<<"Nucleos disponibles de esta maquina: "<<reservas_[i].getNuc_disp()<<endl;
 		}
 	}
 
@@ -50,10 +42,48 @@ Administrador::void modificarReserva(){
 	int idReserva;
 	cout<<"Introduzca el ID de la reserva que desea modificar"<<endl;
 	cin>>idReserva;
-	vector <Reserva>
+
+	std::list<Reserva>::iterator r;
+	r=reservas_.begin();
+	for(int i=0;reservas_.size()>i;i++){
+		if(idReserva=(*r).getIdReser()){
+			std::cout<<"Introduzca los nuevos datos de la reserva"<<std::endl;
+			std::string correo;
+			int nucleos;
+			time_t time;
+			std::cout<<"Introduzca su correo electronico: ";
+			std::cin>>correo;
+			std::cout<<std::endl;
+			std::cout<<"Introduzca el numero de nucleos que desea reservar: ";
+			std::cin>>nucleos;
+			std::cout<<std::endl;
+			std::cout<<"Introduzca el tiempo que desea reservar: ";
+			std::cin>>time;
+			std::cout<<std::endl;
+
+			Reserva res;
+			res.setCorreoElectronico(correo);
+			res.setnumNucleos(nucleos);
+			res.setTiempo(time);
+			reservas_.push_back(res)
+		}
+		j++;
 	}
 }
 
-Administrador::void borrarReserva(){
-
+Administrador::void borrarReserva(std::string idReserva){
+	std::list<Reserva>::iterator r;
+	r=reservas_begin();
+	for(int i=0;reservas_.size()>i;i++){
+		if(id_reser=(*r).getIdReser()){
+			std::string correo="";
+			int nucleos=0;
+			time_t tiempo=0;
+			Reserva res;
+			res.setCorreoElectronico(correo);
+			res.setnumNucleos(nucleos);
+			res.setTiempo(tiempo);
+		}
+		r++;
+	}
 }
