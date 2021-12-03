@@ -20,13 +20,14 @@ class Maquina{
 		
 		Maquina(string id, int nucleos);
 
-		inline string getId(){return id_maq;} 
+		inline string getIdMaq(){return id_maq;} 
 	
 		inline bool getEstado(){return estado;} 
 	
 		inline int getNucleoTotal(){return nuc_tot;} 
 
 		inline int getNucleosDisp(){return nuc_disp;}
+		
 		void setNucleosDisp();
 		
 		//void visualizarMaquinas();
