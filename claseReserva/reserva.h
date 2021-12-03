@@ -29,7 +29,7 @@ class Reserva{
 
 		Reserva(string id, string creador, struct date fIni, struct date fFin, int nucl, string maq);
 
-		inline string getId(){return id_reser;}
+		inline string getIdReser(){return id_reser;}
 
 		inline string getCreador(){return creador_reser;}
 
