@@ -78,12 +78,12 @@ void escribeUsuarios(){
 	ofstream fichero("usuarios.txt");
 	list<Usuario>::iterator i;
 	for( i=usuarios.begin();i!=usuarios.end();i++){
-		fichero<<i->idUsu<<","<<
-		i->correo<<","<<
-		i->lim_tiempo<<","<<
-		i->lim_nucleo<<","<<
-		i->tiempoDisp<<","<<
-		i->nucleoDisp<<endl;
+		fichero<<i->getIdUsu()<<","<<
+		i->getCorreo()<<","<<
+		i->getLim_tiempo()<<","<<
+		i->getLim_nucleo()<<","<<
+		i->getTiempoDisp()<<","<<
+		i->getNucleoDisp()<<endl;
 	}
 	fichero.close();
 }
@@ -92,13 +92,13 @@ void escribreReservas(){
 	ofstream fichero("reservas.txt");
 	list<Reserva>::iterator i;
 	for( i=reservas.begin();i!=reservas.end();i++){
-		fichero<<i->id_reser<<","<<
-		i->creador_reser<<","<<
-		i->duracion<<","<<
-		i->fechaInicio<<","<<
-		i->fechaFin<<","<<
-		i->cant_nuc<<","<<
-		i->maq_reser<<endl;
+		fichero<<i->getIdReser()<<","<<
+		i->getCreador()<<","<<
+		i->getDuracion()<<","<<
+		i->getFechaInicio()<<","<<
+		i->getFechaFin()<<","<<
+		i->getCantNuc()<<","<<
+		i->getMaquina()<<endl;
 	}
 	fichero.close();
 }
@@ -107,10 +107,10 @@ void escribeMaquinas(){
 	ofstream fichero("maquinas.txt");
 	list<Maquina>::iterator i;
 	for( i=maquinas.begin();i!=maquinas.end();i++){
-		fichero<<i->id_maq<<","<<
-		i->estado<<","<<
-		i->nuc_tot<<","<<
-		i->nuc_disp<<","<<endl;
+		fichero<<i->getIdMaq()<<","<<
+		i->getEstado()<<","<<
+		i->getNucleoTotal()<<","<<
+		i->getNucleosDisp()<<","<<endl;
 	}
 	fichero.close();
 }
