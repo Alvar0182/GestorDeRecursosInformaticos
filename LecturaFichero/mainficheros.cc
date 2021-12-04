@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <list>
+#include <ctime>
 #include <fstream>
 #include "maquina.h"
 #include "reserva.h"
@@ -19,11 +20,11 @@ void leeUsuarios(){
 		getline(fichero,aux,',');
 		temp.correo=aux;
 		getline(fichero,aux,',');
-		temp.lim_tiempo=stoi(aux); //en int (cantidad de dias) o en time_t/struct de fecha
+		temp.lim_tiempo=aux; //entime_t de fecha
 		getline(fichero,aux,',');
 		temp.lim_nucleo=stoi(aux);
 		getline(fichero,aux,',');
-		temp.tiempoDisp=stoi(aux);//en int (cantidad de dias) o en time_t/struct de fecha
+		temp.tiempoDisp=aux; //en time_t de fecha
 		getline(fichero,aux,'\n');
 		temp.nucleoDisp=stoi(aux);
 		usuarios.push_back(temp);
@@ -59,11 +60,7 @@ void leeReservas(){
 		getline(fichero,aux,',');
 		temp.creador_reser=aux;
 		getline(fichero,aux,',');
-		temp.duracion=stoi(aux); //en int (cantidad de dias) o en time_t/struct de fecha
-		getline(fichero,aux,',');
-		temp.fechaInicio=stoi(aux); //en int (cantidad de dias) o en time_t/struct de fecha
-		getline(fichero,aux,',');
-		temp.fechaFin=stoi(aux); //en int (cantidad de dias) o en time_t/struct de fecha
+		temp.duracion=aux; //en time_t de fecha
 		getline(fichero,aux,',');
 		temp.cant_nuc=stoi(aux);
 		getline(fichero,aux,'\n');
@@ -80,23 +77,21 @@ void escribeUsuarios(){
 	for( i=usuarios.begin();i!=usuarios.end();i++){
 		fichero<<i->getIdUsu()<<","<<
 		i->getCorreo()<<","<<
-		i->getLim_tiempo()<<","<<
-		i->getLim_nucleo()<<","<<
+		i->getLim_tiempo()<<","<< // tiempo 
+		i->getLim_nucleo()<<","<< 
 		i->getTiempoDisp()<<","<<
 		i->getNucleoDisp()<<endl;
 	}
 	fichero.close();
 }
 
-void escribreReservas(){
+void escribeReservas(){
 	ofstream fichero("reservas.txt");
 	list<Reserva>::iterator i;
 	for( i=reservas.begin();i!=reservas.end();i++){
 		fichero<<i->getIdReser()<<","<<
 		i->getCreador()<<","<<
-		i->getDuracion()<<","<<
-		i->getFechaInicio()<<","<<
-		i->getFechaFin()<<","<<
+		i->getDuracion()<<","<< //tiempo
 		i->getCantNuc()<<","<<
 		i->getMaquina()<<endl;
 	}
