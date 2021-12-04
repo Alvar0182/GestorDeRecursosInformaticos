@@ -1,51 +1,33 @@
-//reserva.h
-
 #ifndef RESERVA_H
 #define RESERVA_H
-
-struct date{
-   int day;  
-   int month; 
-   int year;  
-}
-
-#include <iostream>
-#include <cstdlib>
-#include <string>
-
-using namespace std;
+#include <ctime>
+#include <list>
 
 class Reserva{
-	private:
-		string id_reser;
-		string creador_reser;
-		struct date duracion;  //duracion en dd/mm/aaaa
-		struct date fechaInicio;
-		struct date fechaFin;
-		int cant_nuc;
-		string maq_reser;
+    private:
+    int id_reser;
+    int creador_reserva;
+    time_t tiempo;
+    int nuc_reser;
+    int maq_reser;
 
-	public:
+    public:
 
-		Reserva(string id, string creador, struct date fIni, struct date fFin, int nucl, string maq);
+    Reserva(int id,int creador,time_t tiempo_,int nuc,int maq);
 
-		inline string getIdReser(){return id_reser;}
+    int getId_reser(){return id_reser;}
+    void setId_reser(int id){id_reser=id;}
 
-		inline string getCreador(){return creador_reser;}
+    int getCreador_reserva(){return creador_reserva;}
+    void setCreador_reserva(int creador){creador_reserva=creador;}
 
-		inline struct date getDuracion(){return duracion;}
+    time_t getTiempo(){return tiempo;}
+    void setTiempo(time_t time){tiempo=time;}
 
-		inline struct date getFechaInicio(){return fechaInicio;}
-
-		inline struct date getFechaFin(){return fechaFin;}
-
-		inline int getCantNuc(){return cant_nuc;}
-
-		inline string getMaquina(){return maq_reser;}
-
-		void setFechas();
-
-
+    int getNuc_reser(){return nuc_reser;}
+    void setNuc_reser(int nuc){nuc_reser=nuc;}
+    
+    int getMaq_reser(){return maq_reser;}
+    void setMaq_reser(int maq){maq_reser=maq;}
 };
-
 #endif
