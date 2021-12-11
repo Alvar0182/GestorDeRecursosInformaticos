@@ -1,6 +1,6 @@
 #include "reserva.h"
 
-Reserva::Reserva(int id,int creador,time_t tiempo_,int nuc,int maq){
+Reserva::Reserva(string id, string creador,time_t tiempo_,int nuc, string maq){
     id_reser=id;
     creador_reserva=creador;
     tiempo=tiempo_;
