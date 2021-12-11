@@ -3,7 +3,7 @@ void bajaUsuario(){
 	string id;
 	cin>>id;
 	//buscar usuario
-	int existe=0;
+	
 	list<Usuario>::iterator i;
 		for(i=usuarios.begin();i!=usuarios.end();i++){
 			if(id==i->getIdUsu()){
