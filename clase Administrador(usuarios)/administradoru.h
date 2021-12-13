@@ -10,6 +10,8 @@
 
 
 
+void altaUsuario();
 
+void bajaUsuario();
 
 #endif /* CLASE_ADMINISTRADOR_USUARIOS__ADMINISTRADORU_H_ */
