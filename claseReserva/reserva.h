@@ -3,6 +3,7 @@
 #include <ctime>
 #include <list>
 #include <string>
+using namespace std;
 
 class Reserva{
     private:
