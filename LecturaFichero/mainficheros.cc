@@ -115,7 +115,7 @@ int main(){
 	//lectura de ficheros
 	list<Maquina> maquinas;
 	list<Usuario> usuarios;
-	list<Reserva> reserva;
+	list<Reserva> reservas;
 	leeUsuarios();
 	leeReservas();
 	leeMaquinas();
