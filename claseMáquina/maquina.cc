@@ -11,7 +11,3 @@ Maquina::Maquina(string id, int nucleos){
 	nuc_tot=nucleos;
 	nuc_disp=nucleos;
 }
-
-void setNucleosDisp(const int nucleos){
-	nuc_disp = nucleos;
-}
