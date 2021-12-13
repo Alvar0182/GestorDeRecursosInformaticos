@@ -10,6 +10,6 @@
 
 
 
-
+void bajaMaquina();
 
 #endif /* CLASE_ADMINISTRADOR_MÁQUINAS__ADMINISTRADORM_H_ */
