@@ -4,7 +4,7 @@ void altaUsuario(){
 	//pedir datos
 	  string id;
 	  string correo;
-	  time_t tiempo; //con time_t o struct de tiempo
+	  int tiempo; //con time_t o struct de tiempo
 	  int nucleos;
 
 	  cout<<"Indica los datos del nuevo usuario"<<endl;
