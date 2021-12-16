@@ -4,6 +4,7 @@
 #include "gtest/gtest.h"
 
 //Cambiar la ruta del makefile a la carpeta con googletest
+//De todas formas en este directorio se encuentra el ejecutable con el que se hizo la prueba unitaria
 
 TEST(Maquina, ObjetoConstructor){
     Maquina maq("aaaa", 10);
