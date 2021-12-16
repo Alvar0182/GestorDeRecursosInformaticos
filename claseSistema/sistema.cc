@@ -1,10 +1,12 @@
-/*
- * sistema.cc
- *
- *  Created on: 24 nov. 2021
- *      Author: asimancas
- */
 
 
+#include "sistema.h"
+
+using namespace std;
+
+Sistema::Sistema(bool existeReserva, bool existeUsuario, bool existeMaquina, bool pasaLimite, bool sufcNuc){
+
+
+}
 
 
