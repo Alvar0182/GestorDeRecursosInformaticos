@@ -1,15 +1,13 @@
-/*
- * administradorm.h
- *
- *  Created on: 24 nov. 2021
- *      Author: asimancas
- */
-
 #ifndef CLASE_ADMINISTRADOR_MÁQUINAS__ADMINISTRADORM_H_
 #define CLASE_ADMINISTRADOR_MÁQUINAS__ADMINISTRADORM_H_
 
+class Administradorm:public Administrador{
+    private:
+    std::string cargo;
 
-
-void bajaMaquina();
-
-#endif /* CLASE_ADMINISTRADOR_MÁQUINAS__ADMINISTRADORM_H_ */
+    public:
+    void altaMaq();
+    void bajaMaq();
+    void modifMaq();
+};
+#endif
