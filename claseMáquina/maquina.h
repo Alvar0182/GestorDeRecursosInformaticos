@@ -21,8 +21,6 @@ class Maquina{
 		Maquina(string id, int nucleos);
 
 		inline string getIdMaq(){return id_maq;} 
-	        
-	        inline void setIdMaq(std::string nombre){id_maq=nombre;}   
 	       
 		inline bool getEstado(){return estado;} 
 	
