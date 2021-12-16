@@ -10,68 +10,71 @@
 #include "usuario.h"
 using namespace std;
 
-void leeUsuarios(){
+void leeUsuarios(list<Usuario> &usuarios){
 	usuarios.clear();
 	ifstream fichero("usuarios.txt");
 	string aux;
-	Usuario temp;
+	Usuario temp("111", "correo", 1, 1, 1, 1);
 	while(getline(fichero,aux,',')){
-		temp.idUsu=aux;
+		temp.setIdUsu(aux);
 		getline(fichero,aux,',');
-		temp.correo=aux;
+		temp.setCorreo(aux);
 		getline(fichero,aux,',');
-		temp.lim_tiempo=aux; //entime_t de fecha
+		temp.setLim_tiempo(stoi(aux));
 		getline(fichero,aux,',');
-		temp.lim_nucleo=stoi(aux);
+		temp.setLim_nucleo(stoi(aux));
 		getline(fichero,aux,',');
-		temp.tiempoDisp=aux; //en time_t de fecha
+		temp.setTiempoDisp(stoi(aux));
 		getline(fichero,aux,'\n');
-		temp.nucleoDisp=stoi(aux);
+		temp.setNucleoDisp(stoi(aux));
 		usuarios.push_back(temp);
 	}
 	fichero.close();
 }
 
-void leeMaquinas(){
+void leeMaquinas(list<Maquina> &maquinas){
 	maquinas.clear();
 	ifstream fichero("maquinas.txt");
 	string aux;
-	Maquina temp;
+	Maquina temp("111", 1);
 	while(getline(fichero,aux,',')){
-		temp.id_maq=aux;
+		temp.setId_Maq(aux);
 		getline(fichero,aux,',');
-		temp.estado=stoi(aux);
+		if(aux=="true")
+			temp.setEstado(1);
+		else
+			temp.setEstado(0);
 		getline(fichero,aux,',');
-		temp.nuc_tot=stoi(aux);
+		temp.setNuc_Tot(stoi(aux));
 		getline(fichero,aux,'\n');
-		temp.nuc_disp=stoi(aux);
+		temp.setNuc_Disp(stoi(aux));
 		maquinas.push_back(temp);
 	}
 	fichero.close();
 }
 
-void leeReservas(){
+void leeReservas(list<Reserva> &reservas){
 	reservas.clear();
 	ifstream fichero("reservas.txt");
 	string aux;
-	Reserva temp;
+	Reserva temp("111","aaa", 1, 1,"maq");
 	while(getline(fichero,aux,',')){
-		temp.id_reser=aux;
+		temp.setId_reser(aux);
 		getline(fichero,aux,',');
-		temp.creador_reser=aux;
+		temp.setCreador_reserva(aux);
 		getline(fichero,aux,',');
-		temp.duracion=aux; //en time_t de fecha
+		temp.setTiempo(stoi(aux)); //en time_t de fecha
 		getline(fichero,aux,',');
-		temp.cant_nuc=stoi(aux);
+		temp.setNuc_reser(stoi(aux));
 		getline(fichero,aux,'\n');
-		temp.maq_reser=aux;
+		temp.setMaq_reser(aux);
 
 		reservas.push_back(temp);
 	}
 	fichero.close();
 }
 
-void escribeUsuarios(){
+void escribeUsuarios(list<Usuario> &usuarios){
 	ofstream fichero("usuarios.txt");
 	list<Usuario>::iterator i;
 	for( i=usuarios.begin();i!=usuarios.end();i++){
@@ -85,20 +88,20 @@ void escribeUsuarios(){
 	fichero.close();
 }
 
-void escribeReservas(){
+void escribeReservas(list<Reserva> &reservas){
 	ofstream fichero("reservas.txt");
 	list<Reserva>::iterator i;
 	for( i=reservas.begin();i!=reservas.end();i++){
-		fichero<<i->getIdReser()<<","<<
-		i->getCreador()<<","<<
-		i->getDuracion()<<","<< //tiempo
-		i->getCantNuc()<<","<<
-		i->getMaquina()<<endl;
+		fichero<<i->getId_reser()<<","<<
+		i->getCreador_reserva()<<","<<
+		i->getTiempo()<<","<< //tiempo
+		i->getNuc_reser()<<","<<
+		i->getMaq_reser()<<endl;
 	}
 	fichero.close();
 }
 
-void escribeMaquinas(){
+void escribeMaquinas(list<Maquina> &maquinas){
 	ofstream fichero("maquinas.txt");
 	list<Maquina>::iterator i;
 	for( i=maquinas.begin();i!=maquinas.end();i++){
@@ -116,16 +119,14 @@ int main(){
 	list<Maquina> maquinas;
 	list<Usuario> usuarios;
 	list<Reserva> reservas;
-	leeUsuarios();
-	leeReservas();
-	leeMaquinas();
-
-
+	leeUsuarios(usuarios);
+	leeReservas(reservas);
+	leeMaquinas(maquinas);
 
 
 
 	//escritura de ficheros
-	escribeUsuarios();
-	escribeReservas();
-	escribeMaquinas();
+	escribeUsuarios(usuarios);
+	escribeReservas(reservas);
+	escribeMaquinas(maquinas);
 }
