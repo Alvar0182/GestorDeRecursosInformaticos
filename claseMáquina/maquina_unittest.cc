@@ -25,3 +25,18 @@ TEST(Maquina, Estado){
     EXPECT_EQ(true, maq.getEstado());
     EXPECT_EQ(5,maq.getNucleosDisp());
 }
+
+TEST(Maquina, DatoErroneo){
+    Maquina maq("cccc", 10);
+    EXPECT_EQ(true, maq.getEstado());
+    EXPECT_EQ(10,maq.getNucleosDisp());
+    maq.setNucleosDisp(-5);
+    EXPECT_EQ(false, maq.getEstado());
+    EXPECT_EQ(0,maq.getNucleosDisp());
+    maq.setNucleosDisp(5);
+    EXPECT_EQ(true, maq.getEstado());
+    EXPECT_EQ(5,maq.getNucleosDisp());
+    maq.setNucleosDisp(0);
+    EXPECT_EQ(false, maq.getEstado());
+    EXPECT_EQ(0,maq.getNucleosDisp());
+}
