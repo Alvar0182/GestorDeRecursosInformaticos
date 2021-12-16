@@ -3,9 +3,9 @@
 #include <iostream>
 #include <list>
 
-Usuario::Usuario(string idUsuario, string correo, int limTiempo, int limNucleo, int tDisp, int nDisp){
-	idUsuario = idUsuario;
-	correo = correo;
+Usuario::Usuario(string idUsuario, string mail, int limTiempo, int limNucleo, int tDisp, int nDisp){
+	idUsu = idUsuario;
+	correo = mail;
 	lim_tiempo = limTiempo;
 	lim_nucleo = limNucleo;
 	tiempoDisp = tDisp;
