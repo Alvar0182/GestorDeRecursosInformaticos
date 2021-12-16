@@ -1,14 +1,4 @@
-/*
- * administradoru.cc
- *
- *  Created on: 24 nov. 2021
- *      Author: asimancas
- */
-
 #include "administradoru.h"
-
-
-
 
 void altaUsuario(){
 	//pedir datos
@@ -52,7 +42,6 @@ void bajaUsuario(){
 	list<Usuario>::iterator i;
 		for(i=usuarios.begin();i!=usuarios.end();i++){
 			if(id==i->getIdUsu()){
-
 				//eliminar reservas que tenga el usuario
 					list<Reserva>::iterator it;
 					for(it=reservas.begin();it!=reservas.end();it++){
@@ -60,12 +49,8 @@ void bajaUsuario(){
 							reservas.erase(it);
 						}
 					}
-
 				//eliminar usuario
-
 				usuarios.erase(i);		
-
 		}
-
 }
 }
