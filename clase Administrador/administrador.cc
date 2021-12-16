@@ -5,13 +5,13 @@
 #include <list>
 using namespace std;
 
-Administrador::void verInfor(){
+Administrador::verInfor(){
 	int opcion;
 	string cadena;
 	cout<<"Introduzca si quiere buscar un usuario o una maquina. Introduzca 1 si quiere usuario y 2 si quiere máquina"<<endl;
 	cin>>opcion;
 
-	int idUser,idMaquina;
+	string idUser,idMaquina;
 	if(opcion==1){
 		cout<<"Introduzca el id del usuario"<<endl;
 		cin>>idUser;
@@ -21,31 +21,31 @@ Administrador::void verInfor(){
 		cin>>idMaquina;
 	}
 
-	for(int i=0;usuarios_.size()>i;i++){
-		if(idUser=usuarios_[i].getIdUsu()){
-			cout<<"El id del usuario es: "<<usuarios_[i].getIdUsu();
-			cout<<"El correo del usuario es: "<<usuarios_[i].getCorreo();
+	for(int i=0;usuarios.size()>i;i++){
+		if(idUser=usuarios[i].getIdUsu()){
+			cout<<"El id del usuario es: "<<usuarios[i].getIdUsu();
+			cout<<"El correo del usuario es: "<<usuarios[i].getCorreo();
 		}
 	}
 
-	for(int i=0;reservas_.size()>i;i++){
-		if(idMaquina=reservas_[i].getId_maq()){
-			cout<<"El id de la maquina es: "<<reservas_[i].getIdmaq()<<endl;
-			cout<<"El estado de la maquina es: "<<reservas_[i].getEstado()<<endl;
-			cout<<"Nucleos totales de esta maquina: "<<reservas_[i].getNuc_tot()<<endl;
-			cout<<"Nucleos disponibles de esta maquina: "<<reservas_[i].getNuc_disp()<<endl;
+	for(int i=0;reservas.size()>i;i++){
+		if(idMaquina=reservas[i].getId_maq()){
+			cout<<"El id de la maquina es: "<<reservas[i].getIdmaq()<<endl;
+			cout<<"El estado de la maquina es: "<<reservas[i].getEstado()<<endl;
+			cout<<"Nucleos totales de esta maquina: "<<reservas[i].getNuc_tot()<<endl;
+			cout<<"Nucleos disponibles de esta maquina: "<<reservas[i].getNuc_disp()<<endl;
 		}
 	}
 
 
-Administrador::void modificarReserva(){
+void Administrador::modificarReserva(){
 	int idReserva;
 	cout<<"Introduzca el ID de la reserva que desea modificar"<<endl;
 	cin>>idReserva;
 
 	std::list<Reserva>::iterator r;
-	r=reservas_.begin();
-	for(int i=0;reservas_.size()>i;i++){
+	r=reservas.begin();
+	for(int i=0;reservas.size()>i;i++){
 		if(idReserva=(*r).getIdReser()){
 			std::cout<<"Introduzca los nuevos datos de la reserva"<<std::endl;
 			std::string correo;
@@ -65,24 +65,18 @@ Administrador::void modificarReserva(){
 			res.setCorreoElectronico(correo);
 			res.setnumNucleos(nucleos);
 			res.setTiempo(time);
-			reservas_.push_back(res)
+			reservas.push_back(res)
 		}
 		j++;
 	}
 }
 
-Administrador::void borrarReserva(std::string idReserva){
+void Administrador::borrarReserva(std::string idReserva){
 	std::list<Reserva>::iterator r;
 	r=reservas_begin();
-	for(int i=0;reservas_.size()>i;i++){
+	for(int i=0;reservas.size()>i;i++){
 		if(id_reser=(*r).getIdReser()){
-			std::string correo="";
-			int nucleos=0;
-			time_t tiempo=0;
-			Reserva res;
-			res.setCorreoElectronico(correo);
-			res.setnumNucleos(nucleos);
-			res.setTiempo(tiempo);
+			reservas.erase(r);
 		}
 		r++;
 	}
