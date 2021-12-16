@@ -33,10 +33,12 @@ TEST(Maquina, DatoErroneo){
     maq.setNucleosDisp(-5);
     EXPECT_EQ(false, maq.getEstado());
     EXPECT_EQ(0,maq.getNucleosDisp());
-    maq.setNucleosDisp(5);
-    EXPECT_EQ(true, maq.getEstado());
-    EXPECT_EQ(5,maq.getNucleosDisp());
     maq.setNucleosDisp(0);
     EXPECT_EQ(false, maq.getEstado());
     EXPECT_EQ(0,maq.getNucleosDisp());
+    Maquina maq2("dddd",-5);
+    EXPECT_EQ("dddd",maq2.getIdMaq());
+    EXPECT_EQ(false, maq2.getEstado());
+    EXPECT_EQ(0,maq2.getNucleoTotal());
+    EXPECT_EQ(0,maq2.getNucleosDisp());
 }
