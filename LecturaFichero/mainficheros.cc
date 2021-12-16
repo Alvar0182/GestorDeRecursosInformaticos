@@ -108,7 +108,7 @@ void escribeMaquinas(list<Maquina> &maquinas){
 		fichero<<i->getIdMaq()<<","<<
 		i->getEstado()<<","<<
 		i->getNucleoTotal()<<","<<
-		i->getNucleosDisp()<<","<<endl;
+		i->getNucleosDisp()<<endl;
 	}
 	fichero.close();
 }
