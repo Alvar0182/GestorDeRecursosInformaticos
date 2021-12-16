@@ -16,7 +16,7 @@ private:
 	int tiempoDisp;
 	int nucleoDisp;
 public:
-	Usuario(string idUsuario, string correo, int limTiempo, int limNucleo, int tDisp, int nDisp);
+	Usuario(string idUsuario, string mail, int limTiempo, int limNucleo, int tDisp, int nDisp);
 	/*void crearReserva(std::string correoElectronico, int numNucleos, time_t tiempo);
 	void modificarReserva(std::string id_reser,std::string correoElectronico, int numNucleos, time_t tiempo);
 	void cancelarReserva(std::string id_reser);*/
