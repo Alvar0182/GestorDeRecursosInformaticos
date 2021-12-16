@@ -3,6 +3,14 @@
 #include <iostream>
 #include <list>
 
+Usuario::Usuario(string idUsuario, string correo, int limTiempo, int limNucleo, int tDisp, int nDisp){
+	idUsuario = idUsuario;
+	correo = correo;
+	lim_tiempo = limTiempo;
+	lim_nucleo = limNucleo;
+	tiempoDisp = tDisp;
+	nucleoDisp = nDisp;
+}
 void::Usuario crearReserva(std::string correoElectronico, int numNucleos, time_t tiempo){
 	Reserva r;
 	r.setCorreoElectronico(correoElectronico);
@@ -10,6 +18,7 @@ void::Usuario crearReserva(std::string correoElectronico, int numNucleos, time_t
 	r.setTiempo(tiempo);
 	reservas_.push_back(r);
 }
+
 
 void::Usuario modificarReserva(std::string id_reser,std::string correoElectronico, int numNucleos, time_t tiempo){
 	std::list<Reserva>::iterator r;
