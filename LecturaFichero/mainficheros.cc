@@ -108,12 +108,33 @@ void escribeMaquinas(list<Maquina> &maquinas){
 		fichero<<i->getIdMaq()<<","<<
 		i->getEstado()<<","<<
 		i->getNucleoTotal()<<","<<
-		i->getNucleosDisp()<<endl;
+		i->getNucleosDisp()<<","<<endl;
 	}
 	fichero.close();
 }
 
+menu1(){
+	cout<<"1.- Crear reserva"<<endl;
+	cout<<"2.- Modificar reserva"<<endl;
+	cout<<"3.- Eliminar reserva"<<endl;
+	cout<<"4.- Salir del sistema"<<endl;
+}
 
+menu2(){
+	cout<<"1.- Alta usuario"<<endl;
+	cout<<"2.- Baja usuario"<<endl;
+	cout<<"3.- Limitar tiempo de reserva"<<endl;
+	cout<<"4.- Limitar nucleos de reserva"<<endl;
+	cout<<"5.- Salir del sistema"<<endl;
+}
+
+menu3(){
+	cout<<"1.- Alta maquina"<<endl;
+	cout<<"2.- Baja maquina"<<endl;
+	cout<<"3.- Limitar tiempo de reserva"<<endl;
+	cout<<"4.- Limitar nucleos de reserva"<<endl;
+	cout<<"5.- Salir del sistema"<<endl;
+}
 int main(){
 	//lectura de ficheros
 	list<Maquina> maquinas;
@@ -123,6 +144,121 @@ int main(){
 	leeReservas(reservas);
 	leeMaquinas(maquinas);
 
+	string id;
+	cout<<"Bienvenido al sistema de reserva de maquinas. Por favor, introduzca su ID para iniciar sesion"<<endl;
+	cout<<"(usuario --> usuario, adminU --> Administrador1, adminM --> Administrador2)"<<endl;
+	cin>>id;
+
+	if(id == "usuario"){
+		menu1();
+		int opcion;
+		while(opcion != 4){
+			cin>>opcion;
+			switch(opcion){
+				menu1();
+				case 1:
+				{
+					cout<<"Opcion 1"<<endl;
+				}
+				break;
+				case 2:
+				{
+					cout<<"Opcion 2"<<endl;
+				}
+				break;
+				case 3:
+				{
+					cout<<"Opcion 3"<<endl;
+				}
+				break;
+				case 4:
+				{
+					cout<<"Saliendo del programa..."<<endl;
+				}
+				break;
+
+				default: cout<<"Se ha ingresado una opcion incorrecta"<<endl;
+				break;
+			}
+		}
+	}
+	if(id == "adminU"){
+		menu2();
+		int opcion;
+		while(opcion != 5){
+			cin>>opcion;
+			switch(opcion){
+				menu1();
+				case 1:
+				{
+					cout<<"Opcion 1"<<endl;
+				}
+				break;
+				case 2:
+				{
+					cout<<"Opcion 2"<<endl;
+				}
+				break;
+				case 3:
+				{
+					cout<<"Opcion 3"<<endl;
+				}
+				break;
+				case 4:
+				{
+					cout<<"Opcion 4"<<endl;
+				}
+				break;
+				case 5:
+				{
+					cout<<"Saliendo del programa..."<<endl;
+				}
+				break;
+
+				default: cout<<"Se ha ingresado una opcion incorrecta"<<endl;
+				break;
+			}
+		}
+	}
+
+	if(id == "adminM"){
+		menu3();
+		int opcion;
+		while(opcion != 5){
+			cin>>opcion;
+			switch(opcion){
+				menu1();
+				case 1:
+				{
+					cout<<"Opcion 1"<<endl;
+				}
+				break;
+				case 2:
+				{
+					cout<<"Opcion 2"<<endl;
+				}
+				break;
+				case 3:
+				{
+					cout<<"Opcion 3"<<endl;
+				}
+				break;
+				case 4:
+				{
+					cout<<"Opcion 4"<<endl;
+				}
+				break;
+				case 5:
+				{
+					cout<<"Saliendo del programa..."<<endl;
+				}
+				break;
+
+				default: cout<<"Se ha ingresado una opcion incorrecta"<<endl;
+				break;
+			}
+		}
+	}
 
 
 	//escritura de ficheros
