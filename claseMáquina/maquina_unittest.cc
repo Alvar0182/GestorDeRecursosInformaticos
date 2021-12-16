@@ -15,7 +15,7 @@ TEST(Maquina, ObjetoConstructor){
 }
 
 TEST(Maquina, Estado){
-    Maquina maq("aaaa", 10);
+    Maquina maq("bbbb", 10);
     EXPECT_EQ(true, maq.getEstado());
     EXPECT_EQ(10,maq.getNucleosDisp());
     maq.setNucleosDisp(0);
