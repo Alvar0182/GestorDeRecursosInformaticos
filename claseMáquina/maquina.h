@@ -28,7 +28,7 @@ class Maquina{
 
 		inline int getNucleosDisp(){return nuc_disp;}
 		
-		inline void setNuc_Disp(const int nucleos){nuc_disp = nucleos;}
+		inline void setNuc_Disp(const int nucleos){nuc_disp = nucleos; if(nuc_disp<=0){estado=false; nuc_disp=0; }else{estado=true;}}
 		inline void setNuc_Tot(const int nucleos){nuc_tot = nucleos;}
 		inline void setId_Maq(const string id){id_maq = id;}
 		inline void setEstado(const bool status){estado = status;}
