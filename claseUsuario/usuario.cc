@@ -1,5 +1,5 @@
 #include "usuario.h"
-#include "reserva.h"
+//#include "reserva.h"
 #include <iostream>
 #include <list>
 
@@ -11,7 +11,7 @@ Usuario::Usuario(string idUsuario, string correo, int limTiempo, int limNucleo, 
 	tiempoDisp = tDisp;
 	nucleoDisp = nDisp;
 }
-void::Usuario crearReserva(std::string correoElectronico, int numNucleos, time_t tiempo){
+/*void::Usuario crearReserva(std::string correoElectronico, int numNucleos, time_t tiempo){
 	Reserva r;
 	r.setCorreoElectronico(correoElectronico);
 	r.setnumNucleos(numNucleos);
@@ -65,4 +65,4 @@ void::Usuario cancelarReserva(std::string id_reser){
 		}
 		r++;
 	}
-}
+}*/
